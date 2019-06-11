@@ -101,6 +101,7 @@ qae(mod, dadosFiltrados)
 ```
 ```{r}
 dadosMutate = dados %>% 
+  filter(totalPr < 60) %>% 
   mutate(aumento = totalPr - startPr)
 
 glimpse(dadosMutate)
@@ -108,6 +109,14 @@ glimpse(dadosMutate)
 ggplot(dadosMutate, aes(x = nBids, y = aumento)) + 
   geom_point(alpha = 0.4)
 ```
+lm  == linear model
+
+```{r}
+ggplot(dadosMutate, aes(x = nBids, y = aumento)) + 
+  geom_point(alpha = 0.4) + 
+  geom_smooth(method = "lm", se = FALSE)
+```
+
 
 ```{r}
 mod <- lm(aumento ~ nBids, 
@@ -121,6 +130,8 @@ confint(mod)
 tidy(mod)
 glance(mod) # depois falaremos desse
 
+tidy(mod, conf.int = TRUE, conf.level = .95)
+
 dadosMutate %>% 
   add_predictions(model = mod) %>% # add o que o modelo estima p cada hs_grad
   ggplot(mapping = aes(x = nBids, y = aumento)) + 
@@ -128,3 +139,38 @@ dadosMutate %>%
   geom_line(aes(y = pred), colour = "red")  + 
   geom_abline(intercept = 75, slope = -.72, color  = "darkblue") 
 ```
+
+```{r}
+dadosFiltrados = dados %>% 
+  filter(totalPr < 60)
+
+glimpse(dadosFiltrados)
+
+ggplot(dadosFiltrados, aes(x = stockPhoto, y = totalPr)) + 
+  geom_point(alpha = 0.4)
+```
+
+```{r}
+mod <- lm(totalPr ~ stockPhoto, 
+          data = dadosFiltrados)
+
+# sintaxe base R:
+summary(mod)
+confint(mod)
+
+# broom, que acho mais recomendável: 
+tidy(mod)
+glance(mod) # depois falaremos desse
+
+dadosFiltrados %>% 
+  add_predictions(model = mod) %>% # add o que o modelo estima p cada hs_grad
+  ggplot(mapping = aes(x = stockPhoto, y = totalPr)) + 
+  geom_point(alpha = 0.4) + 
+  geom_line(aes(y = pred), colour = "red")  + 
+  geom_abline(intercept = 75, slope = -.72, color  = "darkblue") 
+```
+
+```{r}
+tidy(mod, conf.int = TRUE, conf.level = .95)
+```
+

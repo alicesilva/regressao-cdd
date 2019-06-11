@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1560264091444.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "27D13D24",
+    "lastKnownWriteTime" : 1560263991,
+    "last_content_update" : 1560264091444,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "C2774B75",
+        "caption" : "dadosFiltrados",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=dadosFiltrados&cache_key=C2774B75",
+        "displayedObservations" : "127",
+        "environment" : "",
+        "object" : "dadosFiltrados",
+        "preview" : "0",
+        "totalObservations" : "127",
+        "variables" : "12"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

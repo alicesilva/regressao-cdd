@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "4105326933",
+    "hash" : "0",
     "id" : "C9C47512",
-    "lastKnownWriteTime" : 1560263192,
-    "last_content_update" : 1560263192426,
+    "lastKnownWriteTime" : 1560264656,
+    "last_content_update" : 1560264656503,
     "path" : "~/Documentos/regressao/reports/intro-regressao-linear (cópia).Rmd",
     "project_path" : "reports/intro-regressao-linear (cópia).Rmd",
     "properties" : {
         "chunk_output_type" : "inline",
-        "cursorPosition" : "123,16",
-        "scrollLine" : "110"
+        "cursorPosition" : "157,12",
+        "scrollLine" : "151"
     },
     "relative_order" : 2,
     "source_on_save" : false,
