@@ -1,0 +1,3 @@
+"0","ggplot(dadosFiltrados, aes(x = nBids, y = totalPr)) + "
+"0","  geom_point(alpha = 0.4) + "
+"0","  geom_smooth(method = ""lm"", se = FALSE)"

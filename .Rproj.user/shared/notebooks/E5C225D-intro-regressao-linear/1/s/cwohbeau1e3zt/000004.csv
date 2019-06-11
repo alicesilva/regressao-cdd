@@ -1,0 +1,3 @@
+"0","ggplot(countyComplete, aes(x = """", y = poverty)) + "
+"0","  geom_quasirandom(size = .5, width = .2) + "
+"0","  geom_point(aes(y = mean(poverty)), color = ""red"", size = 3)"

@@ -1,0 +1,8 @@
+"0","usando_media = countyComplete %>% "
+"0","  select(hs_grad, poverty) %>% "
+"0","  mutate("
+"0","    segundo_modelo = mean(poverty), "
+"0","    residuo = poverty - segundo_modelo, "
+"0","    residuo_quad = residuo**2"
+"0","  )"
+"0","fit_media = usando_media %>% summarise(sse = sum(residuo_quad)) %>% pull(sse)"

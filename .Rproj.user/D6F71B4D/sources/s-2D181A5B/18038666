@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1560262901989.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "18038666",
+    "lastKnownWriteTime" : 262022760,
+    "last_content_update" : 1560262901989,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "52BF04F7",
+        "caption" : "dadosMutate",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=dadosMutate&cache_key=52BF04F7",
+        "displayedObservations" : 143,
+        "environment" : "",
+        "object" : "dadosMutate",
+        "preview" : 0,
+        "totalObservations" : 143,
+        "variables" : 13
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

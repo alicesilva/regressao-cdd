@@ -1,0 +1,130 @@
+---
+title: "Regressão Linear" 
+author: "Nazareno Andrade"
+output: 
+  html_notebook:
+    theme: readable
+    fig_width: 7
+    toc: true
+    toc_float: true
+
+---
+
+```{r message=FALSE, warning=FALSE}
+library(openintro)
+library(tidyverse)
+library(ggbeeswarm)
+library(modelr)
+library(broom)
+theme_set(theme_bw())
+```
+
+```{r}
+dados = read_tsv(here::here("data/marioKart.txt"))
+
+glimpse(dados)
+
+ggplot(dados, aes(x = nBids, y = totalPr)) + 
+  geom_point(alpha = 0.4)
+```
+```{r}
+dadosFiltrados = dados %>% 
+  filter(totalPr < 60)
+
+glimpse(dadosFiltrados)
+
+ggplot(dadosFiltrados, aes(x = nBids, y = totalPr)) + 
+  geom_point(alpha = 0.4)
+```
+
+## Agora de uma forma menos manual
+
+lm  == linear model
+
+```{r}
+ggplot(dadosFiltrados, aes(x = nBids, y = totalPr)) + 
+  geom_point(alpha = 0.4) + 
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+
+
+```{r}
+mod <- lm(totalPr ~ nBids, 
+          data = dadosFiltrados)
+
+# sintaxe base R:
+summary(mod)
+confint(mod)
+
+# broom, que acho mais recomendável: 
+tidy(mod)
+glance(mod) # depois falaremos desse
+
+dadosFiltrados %>% 
+  add_predictions(model = mod) %>% # add o que o modelo estima p cada hs_grad
+  ggplot(mapping = aes(x = nBids, y = totalPr)) + 
+  geom_point(alpha = 0.4) + 
+  geom_line(aes(y = pred), colour = "red")  + 
+  geom_abline(intercept = 75, slope = -.72, color  = "darkblue") 
+```
+
+```{r}
+dadosFiltrados %>% 
+  add_residuals(model = mod) %>% 
+  ggplot(aes(nBids, resid)) + 
+  geom_point(alpha = .4, size = .5) + 
+  geom_hline(yintercept = 0, colour = "blue")
+```
+
+## R^2 é a variância da variável de saída explicada pelo modelo
+
+```{r}
+# variância de y
+var.y2 <- sum((dadosFiltrados$totalPr - mean(dadosFiltrados$totalPr))^2)
+# variância dos resíduos do modelo
+var.residuals <- sum(mod$residuals^2)
+
+#calculando e conferindo o R^2
+(var.y2 - var.residuals)/var.y2
+rsquare(mod, data = dadosFiltrados)
+
+glance(mod)
+```
+
+Em outras situações, outras medidas de erro podem ser úteis
+
+```{r}
+rmse(mod, dadosFiltrados)
+mae(mod, dadosFiltrados)
+qae(mod, dadosFiltrados)
+```
+```{r}
+dadosMutate = dados %>% 
+  mutate(aumento = totalPr - startPr)
+
+glimpse(dadosMutate)
+
+ggplot(dadosMutate, aes(x = nBids, y = aumento)) + 
+  geom_point(alpha = 0.4)
+```
+
+```{r}
+mod <- lm(aumento ~ nBids, 
+          data = dadosMutate)
+
+# sintaxe base R:
+summary(mod)
+confint(mod)
+
+# broom, que acho mais recomendável: 
+tidy(mod)
+glance(mod) # depois falaremos desse
+
+dadosMutate %>% 
+  add_predictions(model = mod) %>% # add o que o modelo estima p cada hs_grad
+  ggplot(mapping = aes(x = nBids, y = aumento)) + 
+  geom_point(alpha = 0.4) + 
+  geom_line(aes(y = pred), colour = "red")  + 
+  geom_abline(intercept = 75, slope = -.72, color  = "darkblue") 
+```

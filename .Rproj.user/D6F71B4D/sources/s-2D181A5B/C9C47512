@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1560260908727.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4105326933",
+    "id" : "C9C47512",
+    "lastKnownWriteTime" : 1560263192,
+    "last_content_update" : 1560263192426,
+    "path" : "~/Documentos/regressao/reports/intro-regressao-linear (cópia).Rmd",
+    "project_path" : "reports/intro-regressao-linear (cópia).Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "123,16",
+        "scrollLine" : "110"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

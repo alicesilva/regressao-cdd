@@ -1,0 +1,3 @@
+"0","regressao.b = boot(Auto, boot.fn, 1000)"
+"0","# tidy(regressao.b, conf.int = TRUE, conf.method = ""perc"") tidy(boot.out) parece bugado em 2017-06-13"
+"0","plot(regressao.b, index=1) # intercept "

@@ -1,0 +1,11 @@
+---
+]0;/home/alicefs/Documentos/regressaoalicefs@lcc3-046:~/Documentos/regressao$ ---
+WARNING:root:could not open file '/etc/apt/sources.list.d/webupd8team-java.list'
+
+WARNING:root:could not open file '/etc/apt/sources.list.d/chrome.list'
+
+WARNING:root:could not open file '/etc/apt/sources.list.d/google-chrome.list'
+
+---: comando não encontrado
+[1]-  Concluído              bash /opt/vincula_email/check_login.sh
+]0;/home/alicefs/Documentos/regressaoalicefs@lcc3-046:~/Documentos/regressao$ 

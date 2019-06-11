@@ -1,0 +1,6 @@
+"0","dadosMutate %>% "
+"0","  add_predictions(model = mod) %>% # add o que o modelo estima p cada hs_grad"
+"0","  ggplot(mapping = aes(x = nBids, y = aumento)) + "
+"0","  geom_point(alpha = 0.4) + "
+"0","  geom_line(aes(y = pred), colour = ""red"")  + "
+"0","  geom_abline(intercept = 75, slope = -.72, color  = ""darkblue"") "

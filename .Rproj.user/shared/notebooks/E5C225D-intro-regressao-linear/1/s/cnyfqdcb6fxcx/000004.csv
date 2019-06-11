@@ -1,0 +1,14 @@
+"0","library(boot)"
+"0","library(ISLR) # dados"
+"0","attach(Auto)"
+"2","The following objects are masked from Auto (pos = 4):
+
+    acceleration, cylinders, displacement, horsepower, mpg, name,
+    origin, weight, year
+
+"
+"2","The following object is masked from package:ggplot2:
+
+    mpg
+
+"

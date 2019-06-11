@@ -1,0 +1,8 @@
+"0","library(purrr)"
+"0","boot <- modelr::bootstrap(mtcars, 100)"
+"0","models <- map(boot$strap, ~ lm(mpg ~ wt, data = .))"
+"0","tidied <- map_df(models, broom::tidy, .id = ""id"")"
+"0","tidied %>% "
+"0","  ggplot(aes(x = estimate)) + "
+"0","  geom_histogram(bins = 30) + "
+"0","  facet_grid(. ~ term, scale = ""free"")"
